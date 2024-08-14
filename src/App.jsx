@@ -1,17 +1,28 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Teste from './assets/components/Test.jsx';
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
 
-import './App.scss'; 
+import Header from './assets/components/Header'
+import Home from './assets/pages/Home'
+import About from './assets/pages/About'
+
+import './App.scss'
+
 
 function App() { 
 
     return (
-        <Router>
+        <>
+            <Header/>
+
             <Routes>
-                <Route path="/" element={<Teste />} />
-            </Routes>        
-        </Router>
-    ); 
+                <Route index path="/" element={<Home/>} />
+                <Route path="/about" element={<About/>} />
+            </Routes>
+
+            
+
+        </>
+
+    )
 }
- export default App;
+ export default App

@@ -1,0 +1,17 @@
+$bg-header-color: #555;
+$padding: 10px;
+
+header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background: $bg-header-color;
+    padding: $padding;
+
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
