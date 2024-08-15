@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink  } from 'react-router-dom'
 import './Header.scss'
 
 
@@ -6,16 +6,16 @@ function Header () {
     return (
       <header>
         <div>
-          Logo
+          logo
         </div>
         <nav>
           <ul>
-            <li>
-              <Link to="/"> Home </Link>
-            </li>
-            <li>
-              <Link to="/about"> About </Link>
-            </li>
+              <NavLink className={({isActive}) => isActive ? "on": "" } to="/">
+                Home
+              </NavLink>
+              <NavLink className={({isActive}) => isActive ? "on": "" }  to="/about"> 
+                About
+              </NavLink>
           </ul>
         </nav>
 
