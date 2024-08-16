@@ -1,0 +1,17 @@
+
+
+section.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 24px;
+}
+
+div.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1000px;
+    width: 100%;
+    color: #fff;
+}
