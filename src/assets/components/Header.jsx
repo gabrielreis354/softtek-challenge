@@ -1,6 +1,5 @@
 import { NavLink }  from 'react-router-dom'
 import Logo from '../svg/Logo'
-import Grid from '../svg/Grid'
 import './Header.scss'
 
 
@@ -26,9 +25,7 @@ function Header () {
                 </NavLink>
             </nav>
           </div>
-          <div className='glow'>
-            <Grid color={"#fff"} width={"100%"}/>
-          </div>
+
 
         </header>
 

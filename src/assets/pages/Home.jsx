@@ -1,5 +1,6 @@
 import './Home.scss'
 import BadgeAI from '../components/BadgeAI'
+import Grid from '../svg/Grid'
 
 function Home () {
     return (
@@ -16,6 +17,9 @@ function Home () {
                 </div>
                 <div className='hero-text'>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil veritatis nulla et odit minima architecto.
+                </div>
+                <div className='glow'>
+                    <Grid color={"#fff"} width={"100%"}/>
                 </div>
 
             </div>
