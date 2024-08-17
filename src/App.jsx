@@ -1,4 +1,3 @@
-import React from 'react'
 import Header from './assets/components/Header'
 import PageWrapper from './assets/components/PageWrapper'
 import './App.scss'
