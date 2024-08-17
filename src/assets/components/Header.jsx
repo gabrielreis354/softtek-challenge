@@ -1,12 +1,16 @@
 import { NavLink }  from 'react-router-dom'
 import Logo from '../svg/Logo'
+import Grid from '../svg/Grid'
 import './Header.scss'
 
 
 function Header () {
     return (
+      <>
+      
       <header>
           <div className='header-content'>
+
             <div>
               <Logo className="logo" width={120} icon_color={"#001010"} icon_bg_color={"#24a5a4"} name_color={"#24a5a4"}/>
             </div>
@@ -22,11 +26,14 @@ function Header () {
                 </NavLink>
             </nav>
           </div>
-
           <div className='glow'>
-
+            <Grid color={"#fff"} width={"100%"}/>
           </div>
+
         </header>
+
+        </>
+        
     )
 }
 
