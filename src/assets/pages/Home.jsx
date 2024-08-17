@@ -18,8 +18,11 @@ function Home () {
                 <div className='hero-text'>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil veritatis nulla et odit minima architecto.
                 </div>
-                <div className='glow'>
-                    <Grid color={"#fff"} width={"100%"}/>
+                <div className='glow-grid'>
+                    <Grid color={"#fff"}/>
+                    <div className='glow'>
+
+                    </div>
                 </div>
 
             </div>

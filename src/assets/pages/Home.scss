@@ -44,20 +44,35 @@ h1.second-line {
     margin: 0 200px;
 }
 
-
-.glow {
+.glow-grid {
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
-    background: radial-gradient(30% 99% at 101% 1%, #24a5a599 0%, rgb(0 0 0 / 0%) 99%);
     width: 100%;
-    height: 300px;
+    height: 100vh;
     margin: auto;
-    z-index: -10;
-    opacity: 0.333;
+    overflow-x: hidden;
+    z-index: -1;
+    opacity: 0.35;
 }
 
-.glow svg {
-    opacity: 0.07;
+
+.glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(20% 30% at 50% 100%, #24a5a599 0%, #001010 99%);
+    opacity: 0.85;
+}
+
+.glow-grid svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    opacity: 0.35;
+
 }
