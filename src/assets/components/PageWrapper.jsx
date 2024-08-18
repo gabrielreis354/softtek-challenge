@@ -6,7 +6,7 @@ import './PageWrapper.scss'
 
 function PageWrapper() { 
     return (
-        <section className='content-wrapper'>
+        <div className='content-wrapper'>
             <div className='content'>
                 <Routes>
                     <Route index path='/' element={<Home/>} />
@@ -15,7 +15,7 @@ function PageWrapper() {
                     <Route path='*' element={ <>not found</> }/>
                 </Routes>
             </div>
-        </section>
+        </div>
     )
 }
 

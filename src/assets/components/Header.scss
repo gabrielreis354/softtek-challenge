@@ -4,7 +4,8 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(6px);
+    z-index: 1;
 }
 
 .header-content {
@@ -12,8 +13,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 24px 0;
-    margin: 0 24px;
-    max-width: 1000px;
+    margin: 0 48px;
+    max-width: 990px;
     width: 100%;
 }
 
