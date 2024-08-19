@@ -1,4 +1,4 @@
-import Header from './assets/components/Header'
+import Header from './assets/components/sections/Header'
 import PageWrapper from './assets/components/PageWrapper'
 import './App.scss'
 

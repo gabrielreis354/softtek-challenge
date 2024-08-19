@@ -1,0 +1,39 @@
+
+.section-content {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 24px 0;
+}
+
+.section-content-title {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.section-content-title h2 {
+    font-size: 28px;
+    font-weight: 400;
+    color: #e1ffff;
+}
+
+.section-content-title p {
+    font-size: 14px;
+    font-weight: 100;
+    margin: 0 100px;
+    opacity: 0.5;
+    color: #e1ffff;
+}
+
+.section-content-inner {
+    position: relative;
+    width: 100%;
+}
+
+.section {
+    width: 100%;
+}
