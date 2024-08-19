@@ -42,9 +42,7 @@ export default function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)} // Atualiza o state password com o novo valor do input
           />
-          <div id="aviso">
-
-          </div>
+          <div id="aviso"></div>
           <button onClick={handleSubmit} className="btn">
             Entrar
           </button>
