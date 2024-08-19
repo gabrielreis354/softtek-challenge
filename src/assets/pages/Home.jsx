@@ -1,25 +1,29 @@
 import './Home.scss'
-import BadgeAI from '../components/BadgeAI'
+import HeroSection from '../components/sections/HeroSection'
+import Section from '../components/sections/Section'
+import Cards from '../components/elements/Cards'
+import CTA from '../components/elements/CTA'
+
+const section1 = {
+    title: "Prezamos pela melhor experiência de atendimento.",
+    description: "Lorem ipsum odor amet, consectetuer adipiscing elit. Aliquam lacus hendrerit nisi feugiat, ex sapien hac risus. Ligula duis sollicitudin mauris lacus; ante facilisi."
+}
+
+const section2 = {
+    title: "Um titulo qualquer",
+    description: "Lorem ipsum odor amet, consectetuer adipiscing elit. Aliquam lacus hendrerit nisi feugiat, ex sapien hac risus. Ligula duis sollicitudin mauris lacus; ante facilisi."
+}
 
 function Home () {
     return (
-        <div className='hero'>
-            <div className='hero-headline'>
-                <BadgeAI/>
-                <div className='hero-title'>
-                    <h1 className='first-line'>
-                        Facilitamos o suporte ao cliente com IA, 
-                    </h1>
-                    <h1 className='second-line'> 
-                        combinando inovação e atenção pessoal.
-                    </h1>
-                </div>
-                <div className='hero-text'>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil veritatis nulla et odit minima architecto.
-                </div>
-
-            </div>
-
+        <div className='home'>
+            <HeroSection/>
+            <Section {...section1}>
+                <Cards/>
+            </Section>
+            <Section {...section2}>
+                <CTA/>
+            </Section>
         </div>
     )
 }

@@ -1,0 +1,54 @@
+.card {
+    position: relative;
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden;
+    color: #e1ffff;
+    border: 1px solid #e1ffff12;
+}
+
+.card-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 24px;
+    background-image: radial-gradient(35% 60% at 0% 0%, #24a5a565 0%, #001010 99%);
+    transition: .4s;
+    background-size: 100% 100%;
+    width: 100%;
+}
+
+
+.card-inner:hover {
+    transition: .4s;
+    background-size: 120% 120%;
+}
+
+.card .grid-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.card span {
+    display: flex;
+    width: min-content;
+}
+
+.card h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #e1ffff;
+    text-transform: capitalize;
+}
+
+.card p {
+    font-size: 14px;
+    font-weight: 100;
+    color: #e1ffff;
+    opacity: 0.75;
+}
+

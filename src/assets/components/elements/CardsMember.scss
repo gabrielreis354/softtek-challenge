@@ -1,0 +1,57 @@
+.cards-member {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cards-member .card {
+    width: 165px;
+    height: 235px;
+}
+
+.cards-member .card-member-description {
+    position: absolute;
+}
+
+.cards-member .card-inner {
+    padding: 0;
+    background: #24a5a550;
+}
+
+.cards-member .card svg {
+    opacity: 0.3;
+    height: 100%;
+}
+
+.cards-member .card-member-pic {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    filter: grayscale(0.3);
+    transition: .3s;
+}
+
+
+.cards-member #bialas {
+    background-image: url('./bialas.png');
+    background-size: 160%;
+    background-position: 50% -80%;
+}
+
+.cards-member #luiz {
+    background-image: url('./luiz.png');
+    background-size: 100%;
+    background-position: 50% 320%;
+}
+
+.cards-member #higor {
+    background-image: url('./higor.png');
+    background-size: 110%;
+    background-position: 50% 100%;
+}
+
+
+
+
+
+

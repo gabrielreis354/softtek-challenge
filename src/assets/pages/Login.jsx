@@ -1,4 +1,3 @@
-//Aqui o gabriel ira fazer. ps: nao mexa no meu codigo pfv :).
 import { useState } from "react";
 import "./Login.scss";
 import { useNavigate } from "react-router-dom";
@@ -24,9 +23,9 @@ export default function Login() {
   };
 
   return (
-    <div className="hero">
+    <div className="login">
       <form>
-        <div className="hero-background">
+        <div className="login-background">
           <h2>Login</h2>
           <input
             id="email"
