@@ -24,7 +24,10 @@ h2 {
   box-shadow: 9px 10px 30px 0px rgba(0, 0, 0, 0.8);
 }
 
-
+#aviso p{
+  cursor: pointer;
+  transition: 0.4s;
+}
 
 ::placeholder {
   font-size: 16px;

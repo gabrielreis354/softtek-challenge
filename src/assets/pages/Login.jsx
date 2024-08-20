@@ -15,10 +15,10 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault(); // Evita que a página seja recarregada ao clicar no botão
     if (email.includes("@") && password.length > 0) {
-        navigator("About");
-        limpar();        
+      limpar();        
+      navigator("/About");
     } else {
-        document.querySelector("#aviso").innerHTML = "<p>Preencha todos os campos para continuar</p>"
+      document.querySelector("#aviso").innerHTML = "<p>Preencha todos os campos para continuar !</p>"
     }
   };
 
