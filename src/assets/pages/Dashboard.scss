@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+$primary_color: #34efcd;
+$secondary_color: #2ebda3;
+$background_color: #222627;
+
+.wrapper {
+  margin-top: 100px;
+  display: flex;
+//   flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sidebar {
+//   width: 35%;
+  width: 100%;
+//   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $background_color;
+//   border-radius: 15px 0 0 15px;
+  border-radius: 15px 15px 0px 0px;
+}
+
+h2 {
+  padding: 8px;
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: capitalize;
+  line-height: 1.25;
+}
+
+::placeholder {
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-size: 16px;
+  color: #2ebda3;
+}
+
+.filtros_form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+div.input_wrapper {
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+select, input {
+  background-color: $background_color;
+  color: $primary_color;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border: 1px solid $primary_color;
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+}
+
+input:focus {
+  outline: none;
+}
+
+.main_panel {
+  width: 100%;
+//   width: 65%;
+  display: flex;
+  flex-direction: column;
+  background-color: aquamarine;
+  border-radius: 0px 0px 15px 15px;
+  color: $background_color;
+  margin-bottom: 80px;
+}
+
+.cards_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card_wrapper {
+  max-width: 170px;
+  width: 100%;
+  height: 200px;
+  background-color: #222627;
+  color: $primary_color;
+  margin: 10px;
+  padding: 10px;
+  transition: 0.4s;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.card_wrapper:hover {
+  background-color: $primary_color;
+  color: #222627;
+  cursor: pointer;
+}
+
+.btn {    
+  border: 1px solid $primary_color;
+  border-radius: 8px;
+  background-color: $primary_color;
+  color: $background_color;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: 0.4s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: $background_color;
+  color: $primary_color;
+}
+
+#aviso {
+  margin: 20px;
+  font-size: 20px;
+}

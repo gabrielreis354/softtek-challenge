@@ -16,7 +16,7 @@ export default function Login() {
     e.preventDefault(); // Evita que a página seja recarregada ao clicar no botão
     if (email.includes("@") && password.length > 0) {
       limpar();        
-      navigator("/About");
+      navigator("/dashboard");
     } else {
       document.querySelector("#aviso").innerHTML = "<p>Preencha todos os campos para continuar !</p>"
     }
