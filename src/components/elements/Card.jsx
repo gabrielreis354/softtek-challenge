@@ -1,5 +1,5 @@
 import './Card.scss'
-import Grid from '../../svg/Grid'
+import Grid from '../../assets/svg/Grid'
 
 function Card (props) {
     return (

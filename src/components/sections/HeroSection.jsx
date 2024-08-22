@@ -1,4 +1,4 @@
-import Grid from '../../svg/Grid'
+import Grid from '../../assets/svg/Grid'
 import BadgeAI from '../elements/BadgeAI'
 import './HeroSection.scss'
 
@@ -27,12 +27,19 @@ function Hero () {
             <div className='hero-element'>
                 <div className='hero-frame'>
                     <div className='hero-frame-top'>
-                        <div className='ball ball-red'></div>
-                        <div className='ball ball-yellow'></div>
-                        <div className='ball ball-green'></div>
+                        <div className='frame-actions'>
+                            <div className='action action-red'></div>
+                            <div className='action action-yellow'></div>
+                            <div className='action action-green'></div>
+                        </div>
+                        <div className='frame-header'>
+                            Nome do video a ser apresentado.mp4
+                        </div>
+
                     </div>
                     <div className='hero-frame-content'>
 
+                        
                     </div>
                 </div>
             </div>

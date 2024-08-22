@@ -108,6 +108,8 @@ h1.second-line {
     border: 1px solid #e1ffff18;
     border-radius: 10px;
     background: #001010;
+    justify-content: start;
+    flex-direction: column;
 }
 
 .hero-frame-top {
@@ -116,12 +118,12 @@ h1.second-line {
     align-items: center;
     gap: 4px;
     width: 100%;
-    height: 36px;
+    min-height: 36px;
     border-bottom: 1px solid #e1ffff18;
     padding: 0 24px;
 }
 
-.hero-frame-top .ball {
+.hero-frame-top .action {
     width: 8px;
     height: 8px;
     border-radius: 100px;
@@ -129,14 +131,29 @@ h1.second-line {
     cursor: pointer;
 }
 
-.hero-frame-top .ball-green {
+.hero-frame-top  .frame-header {
+    display: flex;
+    width: 100%;
+    color: #fff;
+    font-size: 11px;
+    opacity: 0.5;
+    justify-content: center;
+    font-size: 11px;
+}
+
+.hero-frame-top .frame-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.hero-frame-top .action-green {
     background: #29ce42;
 }
 
-.hero-frame-top .ball-yellow {
+.hero-frame-top .action-yellow {
     background: #ffc32f;
 }
 
-.hero-frame-top .ball-red {
+.hero-frame-top .action-red {
     background: #ff6158;
 }

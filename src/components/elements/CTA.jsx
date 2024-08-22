@@ -2,6 +2,8 @@
 
 import './CTA.scss'
 import Card from "./Card"
+import Button from './Button'
+import {Link} from 'react-router-dom'
 
 function CTA () {
     return (
@@ -12,14 +14,17 @@ function CTA () {
                 <div className="card-flex">
                     <div className="card-left card-side">
                         <h2>
-                            Este é um texto merda só para constar. Chamada para ação.
+                            Melhore A Eficiência Do Seu Suporte com a EasyCall!
                         </h2>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique nesciunt atque accusantium quas quo tempora consequatur praesentium repellat, commodi odit cumque modi repellendus autem qui harum, sunt magnam maiores magni.
+                            Teste a EasyCall e veja como nossa plataforma pode agilizar a resolução de chamados e aprimorar o suporte ao cliente. Comece agora!
                         </p>
-                        <button>
-                            some button here
-                        </button>
+                        <Link to={"/login"}>
+                            <Button>
+                                Começar Agora
+                            </Button>
+                        </Link>
+
                     </div>
                     <div className="card-right card-side">
                         <div className='card-img'>

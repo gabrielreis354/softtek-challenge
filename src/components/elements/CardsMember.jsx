@@ -25,7 +25,7 @@ function CardsMember () {
                 </div>
             </Card>
             <Card>
-                <div className='card-member-pic'>
+                <div className='card-member-pic' id='guilherme'>
                     
                 </div>
                 <div className='card-member-description'>
@@ -33,7 +33,7 @@ function CardsMember () {
                 </div>
             </Card>
             <Card>
-                <div className='card-member-pic'>
+                <div className='card-member-pic' id="gabriel">
                     
                 </div>
                 <div className='card-member-description'>
