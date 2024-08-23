@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Dashboard.scss";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
   const [database, setDatabase] = useState([]);
@@ -20,6 +21,8 @@ export default function Dashboard() {
   const [status, setStatus] = useState("");
   const [local, setLocal] = useState("");
 
+  const navigate = useNavigate()
+
   // Função para aplicar os filtros
   const filterChamados = () => {
     return database.filter((chamado) => {
@@ -34,6 +37,11 @@ export default function Dashboard() {
   };
 
   const filteredChamados = filterChamados();
+
+  const handleVerMais = (id) => {
+    navigate(`/chamado/${id}`); // Navega para a página de detalhes do chamado
+  };
+
 
   return (
     <div className="wrapper">
@@ -114,13 +122,13 @@ export default function Dashboard() {
                   <p className="card_description">{chamado.Descrição}</p>
                 </div>
 
-                <a href="/about" className="btn">
+                <button onClick={() => handleVerMais(chamado.Número)} className="btn">
                   Ver Mais
-                </a>
+                </button>
               </div>
             ))
           ) : (
-            <p id="aviso"><strong>Nenhum chamado encontrado !</strong></p>
+            <p id="aviso"><strong>Nenhum chamado encontrado.</strong></p>
           )}
         </div>
       </div>

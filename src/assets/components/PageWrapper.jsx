@@ -4,6 +4,7 @@ import About from '../pages/About'
 import Login from '../pages/Login'
 import './PageWrapper.scss'
 import Dashboard from '../pages/Dashboard'
+import Detail from '../pages/Detail'
 
 function PageWrapper() { 
     return (
@@ -14,6 +15,7 @@ function PageWrapper() {
                     <Route path='/about' element={<About/>} />
                     <Route path='/login' element={<Login/>} />
                     <Route path='/dashboard' element={<Dashboard/>} />
+                    <Route path='/chamado/:numero' element={<Detail />} />
                     <Route path='*' element={ <>not found</> }/>
                 </Routes>
             </div>
