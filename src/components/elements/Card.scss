@@ -5,6 +5,7 @@
     overflow: hidden;
     color: #e1ffff;
     border: 1px solid #e1ffff12;
+    width: 100%;
 }
 
 .card-inner {
@@ -13,15 +14,15 @@
     justify-content: center;
     gap: 20px;
     padding: 24px;
-    background-image: radial-gradient(35% 60% at 0% 0%, #24a5a565 0%, #001010 99%);
-    transition: .4s;
+    background-image: radial-gradient(45% 70% at 0% 0%, #24a5a565 0%, #001010 99%);
+    transition: .5s;
     background-size: 100% 100%;
     width: 100%;
 }
 
 
 .card-inner:hover {
-    transition: .4s;
+    transition: .5s;
     background-size: 120% 120%;
 }
 
@@ -31,15 +32,24 @@
     left: 0;
     opacity: 0.5;
     z-index: -1;
+    height: 100%;
 }
 
 .card span {
+    transition: 1s;
     display: flex;
     width: min-content;
+    mask: linear-gradient(145deg, rgba(0, 0, 0, 10%) 0%, rgb(0 0 0 / 50%) 40%, rgb(0, 0, 0) 100%);
 }
 
+.card-inner:hover span  {
+    scale: 1.05;
+    mask: linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 0%);
+}
+
+
 .card h3 {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 500;
     color: #e1ffff;
     text-transform: capitalize;

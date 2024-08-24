@@ -44,7 +44,7 @@ export default function Dashboard() {
 
 
   return (
-    <div className="wrapper">
+    <div className="dashboard-wrapper">
       <div className="sidebar">
         <h2>Filtros</h2>
         <div className="filtros_form">

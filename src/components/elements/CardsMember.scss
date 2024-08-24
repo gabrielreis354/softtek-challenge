@@ -27,29 +27,40 @@
     height: 100%;
     width: 100%;
     background-repeat: no-repeat;
-    filter: grayscale(0.3);
+    filter: grayscale(0.1) saturate(0.9) contrast(0.9);
     transition: .3s;
 }
 
 
 .cards-member #bialas {
-    background-image: url('./bialas.png');
+    background-image: url('../../assets/img/bialas.png');
     background-size: 160%;
     background-position: 50% -80%;
 }
 
 .cards-member #luiz {
-    background-image: url('./luiz.png');
+    background-image: url('../../assets/img/luiz.png');
     background-size: 100%;
     background-position: 50% 320%;
 }
 
 .cards-member #higor {
-    background-image: url('./higor.png');
+    background-image: url('../../assets/img/higor.png');
     background-size: 110%;
     background-position: 50% 100%;
 }
 
+.cards-member #guilherme {
+    background-image: url('../../assets/img/gui.png');
+    background-size: 150%;
+    background-position: 50% -250%;
+}
+
+.cards-member #gabriel {
+    background-image: url('../../assets/img/gabriel.png');
+    background-size: 120%;
+    background-position: 50% 150%;
+}
 
 
 
