@@ -27,7 +27,7 @@ function Cards () {
                     Escalonamento Inteligente
                 </h3>
                 <p>
-                    A EasyCall aloca chamados automaticamente para técnicos com a especialização e carga de trabalho adequadas, garantindo uma resolução rápida e eficiente.
+                    A EasyCall aloca chamados para técnicos com a especialização e carga de trabalho adequadas, garantindo uma resolução rápida e eficiente.
                 </p>
             </Card>
 
