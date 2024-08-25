@@ -90,15 +90,13 @@ h1.second-line {
 }
 
 .hero-frame {
-    font-size: 0px;
     color: #e1ffff1e;
     display: flex;
     margin-top: 75px;
     width: 100%;
     height: 100%;
-    min-height: 500px;
     border: 1px solid #e1ffff18;
-    border-radius: 10px;
+    border-radius: 15px;
     background: #001010;
     justify-content: start;
     flex-direction: column;
@@ -112,7 +110,7 @@ h1.second-line {
     width: 100%;
     min-height: 36px;
     border-bottom: 1px solid #e1ffff18;
-    padding: 0 24px;
+    padding: 0 34px;
 }
 
 .hero-frame-top .action {
@@ -126,11 +124,10 @@ h1.second-line {
 .hero-frame-top  .frame-header {
     display: flex;
     width: 100%;
-    color: #fff;
-    font-size: 11px;
+    color: #e1ffff;
+    font-size: 10px;
     opacity: 0.5;
     justify-content: center;
-    font-size: 0px;
 }
 
 .hero-frame-top .frame-actions {
@@ -152,31 +149,41 @@ h1.second-line {
 
 .hero-frame-content {
     display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
+    padding: 34px;
+    gap: 34px;
 }
+
+
+.frame-content-head h3 {
+    font-size: 22px;
+    color: #e1ffff;
+    font-weight: 700;
+}
+
 
 .frame-content-inner {
     display: flex;
     width: 100%;
     height: 100%;
-    padding: 25px;
+    gap: 34px;
 }
 
 .frame-content-left {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     width: 60%;
     height: 100%;
-    padding: 10px;
 }
 
 .frame-content-right {
     display: flex;
+    flex-direction: column;
     width: 40%;
-    height: 100%;
-    padding: 10px;
+    justify-content: space-between;
 }
 
 .frame-video {
@@ -184,38 +191,157 @@ h1.second-line {
     flex-direction: column;
     width: 100%;
     height: max-content;
-    padding: 5px;
     position: relative;
+    padding: 10px;
+    border: 1px solid #e1ffff18;
+    border-radius: 25px;
 }
 
-.frame-video-title {
-    font-size: 16px;
-    color: #fff;
-    opacity: 0.9;
+.frame-video-head {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border: 1px solid #e1ffff18;
+    border-radius: 15px;
 }
+
+.frame-video-head h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #e1ffff;
+}
+
+.frame-video-head p {
+    font-size: 12px;
+    font-weight: 200;
+    color: #e1ffff;
+}
+
 
 .frame-video iframe {
-    aspect-ratio: 16 / 9;
-    width: 100%;
-    height: auto;
-}
-
-.iframe-wrapper.paused iframe {
-    visibility: hidden;
-}
-
-.iframe-wrapper.paused {
-    background-image: url('../../assets/img/ai-assistant.jpg');
-    background-size: cover;
-}
-
-.iframe-wrapper {
-    border-radius: 15px;
-    overflow: hidden;
-    background: transparent;
-    border: none;
-    aspect-ratio: 16 / 9;
     width: 100%;
     height: 100%;
 }
 
+
+.iframe-wrapper {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 15px;
+    overflow: hidden;
+    border: none;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    cursor: pointer;
+}
+
+.iframe-wrapper img {
+    width: 100%;
+    height: 100%;
+}
+
+.frame-video-select {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border: 1px solid;
+    border-radius: 15px;
+}
+
+.frame-video-select h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #e1ffff;
+}
+
+
+.frame-video-select input {
+    display: none;
+}
+
+.frame-video-select form {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.frame-video-select form label {
+    display: flex;
+    width: 100%;
+}
+
+.select-video {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 100;
+    font-size: 14px;
+    border: 1px solid #e1ffff18;
+    border-radius: 10px;
+    color: #e1ffff;
+    padding: 12px;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    cursor: pointer;
+}
+
+.select-video-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.select-video::after {
+    transition: .5s;
+    opacity: 0.2;
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: #24a5a5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+
+.select-video:hover::after {
+    transition: .5s;
+    opacity: .4;
+}
+
+label.checked .select-video::after {
+    transition: .5s;
+    opacity: .6;
+}
+
+.frame-video-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(100% 100% at 50% 120%, rgba(36, 165, 165, 1) 0%, rgba(0, 16, 16, 0) 100%);
+}
+
+
+.frame-video-overlay svg {
+    transition: .4s;
+}
+
+.frame-video-overlay svg:hover {
+    scale: 1.1;
+}

@@ -6,7 +6,7 @@ import CTA from '../elements/CTA'
 
 const section1 = {
     title: "Prezamos pela melhor experiência de atendimento.",
-    description: "Garantimos um suporte otimizado e eficiente, oferecendo uma experiência personalizada através de IA e uma estrutura que foca na agilidade."
+    description: "Garantimos um suporte otimizado e eficiente através de uma experiência personalizada através de IA."
 }
 
 const section2 = {

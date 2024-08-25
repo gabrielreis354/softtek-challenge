@@ -9,7 +9,7 @@ function Cards () {
         <div className='cards'>
             <Card>
                 <span>
-                    <IconComputer color={"#e1ffff"} height={"42"} />
+                    <IconComputer color={"#e1ffff"} height={"40"} />
                 </span>
                 <h3 className='card-title'>
                     Inteligência artificial
@@ -21,7 +21,7 @@ function Cards () {
             
             <Card>
                 <span>
-                    <IconSelect color={"#e1ffff"} height={"42"}/>
+                    <IconSelect color={"#e1ffff"} height={"40"}/>
                 </span>
                 <h3>
                     Escalonamento Inteligente
@@ -33,7 +33,7 @@ function Cards () {
 
             <Card>
                 <span>
-                    <IconFocus color={"#e1ffff"} height={"42"}/>
+                    <IconFocus color={"#e1ffff"} height={"40"}/>
                 </span>
                 <h3>
                     Foco no problema
