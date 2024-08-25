@@ -9,7 +9,7 @@ function Cards () {
         <div className='cards'>
             <Card>
                 <span>
-                    <IconComputer color={"#e1ffff"} height={"42"} />
+                    <IconComputer color={"#e1ffff"} height={"40"} />
                 </span>
                 <h3 className='card-title'>
                     Inteligência artificial
@@ -21,19 +21,19 @@ function Cards () {
             
             <Card>
                 <span>
-                    <IconSelect color={"#e1ffff"} height={"42"}/>
+                    <IconSelect color={"#e1ffff"} height={"40"}/>
                 </span>
                 <h3>
                     Escalonamento Inteligente
                 </h3>
                 <p>
-                    A EasyCall aloca chamados automaticamente para técnicos com a especialização e carga de trabalho adequadas, garantindo uma resolução rápida e eficiente.
+                    A EasyCall aloca chamados para técnicos com a especialização e carga de trabalho adequadas, garantindo uma resolução rápida e eficiente.
                 </p>
             </Card>
 
             <Card>
                 <span>
-                    <IconFocus color={"#e1ffff"} height={"42"}/>
+                    <IconFocus color={"#e1ffff"} height={"40"}/>
                 </span>
                 <h3>
                     Foco no problema

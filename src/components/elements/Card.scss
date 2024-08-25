@@ -36,27 +36,26 @@
 }
 
 .card span {
-    transition: 1s;
+    transition: .4s;
     display: flex;
     width: min-content;
     mask: linear-gradient(145deg, rgba(0, 0, 0, 10%) 0%, rgb(0 0 0 / 50%) 40%, rgb(0, 0, 0) 100%);
 }
 
 .card-inner:hover span  {
-    scale: 1.05;
-    mask: linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 0%);
+    scale: 1.075;
 }
 
 
 .card h3 {
-    font-size: 17px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 400;
     color: #e1ffff;
     text-transform: capitalize;
 }
 
 .card p {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 100;
     color: #e1ffff;
     opacity: 0.75;
