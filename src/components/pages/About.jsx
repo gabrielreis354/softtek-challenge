@@ -7,11 +7,20 @@ const section1 = {
     description: "Essas são as pessoas que fazem parte disso tudo."
 }
 
+const section2 = {
+    title: "Conheça as tecnologias que utilizamos.",
+    description: "Essas são as pessoas que fazem parte disso tudo."
+}
+
 function About () {
     return (
         <div className="about">
             <Section {...section1}>
                 <CardsMembers/>
+            </Section>
+            <Section {...section2}>
+                Tecnologias usadas
+
             </Section>
         </div>
     )

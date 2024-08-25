@@ -1,4 +1,5 @@
 import Header from './components/sections/Header'
+import Footer from './components/sections/Footer'
 import PageWrapper from './components/PageWrapper'
 import './App.scss'
 
@@ -13,7 +14,7 @@ function App() {
         <>
             {!isDashboardRoute && <Header />}
             <PageWrapper/>
-
+            {!isDashboardRoute && <Footer />}
         </>
     )
 }

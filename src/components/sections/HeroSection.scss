@@ -148,12 +148,19 @@ h1.second-line {
 }
 
 .hero-frame-content {
+    opacity: 0.75;
+    transition-delay: 2s;
+    transition-duration: 0.4s;
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
     padding: 34px;
     gap: 34px;
+}
+
+.hero-frame-content:hover {
+    transition-delay: 0s;
 }
 
 
@@ -343,5 +350,5 @@ label.checked .select-video::after {
 }
 
 .frame-video-overlay svg:hover {
-    scale: 1.1;
+    scale: 1.075;
 }

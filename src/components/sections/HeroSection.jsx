@@ -100,7 +100,7 @@ function Hero () {
                                                 <img src={videoInfo.thumbSrc} alt="thumbnail"/>
 
                                                 <div className='frame-video-overlay'>
-                                                    <Play height={96} color="#fff" />
+                                                    <Play height={72} color="#fff" />
                                                 </div>
                                             </>
                                             
