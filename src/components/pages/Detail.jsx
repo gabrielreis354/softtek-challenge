@@ -5,6 +5,8 @@ import "./Detail.scss";
 export default function Detail() {
   const { numero } = useParams(); // Obtém o ID do chamado da URL
   const [chamado, setChamado] = useState();
+  const [chamados, setChamados] = useState([]);
+  const [solucoesSemelhantes, setSolucoesSemelhantes] = useState([]);
 
   useEffect(() => {
     fetch("/data/chamados.json", {
@@ -13,7 +15,10 @@ export default function Detail() {
       },
     })
       .then((res) => res.json())
-      .then((res) => res.data.find((item) => item.Número === numero))
+      .then((res) => {
+        setChamados(res.data);
+        return res.data.find((item) => item.Número === numero);
+      })
       .then((res) => setChamado(res));
   }, [numero]);
 
@@ -25,12 +30,58 @@ export default function Detail() {
     );
   }
 
+  function encontrarSolucoesSemelhantes(chamadoAtual) {
+    const solucoes = chamados
+      .filter(
+        (chamado) =>
+          chamado.Status === "Resolvido" &&
+          chamado.Interacoes.some((interacao) =>
+            chamadoAtual.Interacoes.includes(interacao)
+          ) &&
+          chamado.Categoria === chamadoAtual.Categoria &&
+          chamado.grupoAtribuicao === chamadoAtual.grupoAtribuicao
+      )
+      .map((chamado) => chamado.Resolução);
+
+    document.getElementById("solution_title").innerHTML =
+      "Soluções Encontradas: ";
+
+    setSolucoesSemelhantes(solucoes);
+  }
+
   const handleClose = () => {
     window.history.back();
   };
 
-  const searchSolution = () => {
-    console.log("Oi");
+  const handleSearchSolution = (chamado) => {
+    document.getElementById("solution_title").innerHTML =
+      "Procurando soluções semelhantes...";
+    setTimeout(() => {
+      encontrarSolucoesSemelhantes(chamado);
+    }, 0o500);
+  };
+
+  const handleSelectSolution = (solucao) => {
+    let currentDate = new Date();
+    let date =
+      currentDate.toLocaleDateString("pt-br", {
+        timeZone: "UTC",
+      }) +
+      " - " +
+      currentDate.toLocaleTimeString("pt-br", {
+        timeZone: "UTC",
+      });
+
+      setChamado({
+        ...chamado,
+        Status: "Resolvido",
+        Atualizado: date,
+        Resolução: solucao,
+        Encerrado: date,
+        dataResolucao: currentDate.toLocaleDateString("pt-br", {
+          timeZone: "UTC",
+        }),
+      })
   };
 
   return (
@@ -118,16 +169,39 @@ export default function Detail() {
 
         <div className="buttons">
           <button className="btn" onClick={() => handleClose()}>
-            Voltar
+            Voltar para a lista
           </button>
-          <button className="btn" onClick={() => searchSolution()}>
+          <button className="btn" onClick={() => handleSearchSolution(chamado)}>
             Procurar Soluções
           </button>
         </div>
       </div>
 
-      <div className="solucoes">
+      <div className="solution">
         <h2>Soluções</h2>
+
+        <h3 id="solution_title"></h3>
+        <div className="solucoes_resumo">
+          {solucoesSemelhantes.length > 0 ?
+          solucoesSemelhantes.map((solucao, index) => {
+            return (
+              <div className="item" key={index}>
+                <div className="item_title">
+                  <h3>Solução #{index + 1}</h3>
+                </div>
+                <p>{solucao}</p>
+                <button
+                  className="btn_solution"
+                  onClick={() => handleSelectSolution(solucao)}
+                >
+                  Aplicar Solução
+                </button>
+              </div>
+            );
+          }) : (
+            <p>Nenhuma solução encontrada.</p>
+          )}
+        </div>
       </div>
     </div>
   );

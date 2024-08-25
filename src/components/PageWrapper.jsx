@@ -4,11 +4,7 @@ import About from './pages/About'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import './PageWrapper.scss'
-<<<<<<< HEAD:src/assets/components/PageWrapper.jsx
-import Dashboard from '../pages/Dashboard'
-import Detail from '../pages/Detail'
-=======
->>>>>>> a1df2f54d6d1e8c028595c996d550742237513b3:src/components/PageWrapper.jsx
+import Detail from './pages/Detail'
 
 function PageWrapper() { 
     return (
