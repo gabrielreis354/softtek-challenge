@@ -1,0 +1,90 @@
+.cards-member {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cards-member .card-inner {
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.cards-member .card {
+    width: 165px;
+    height: 235px;
+}
+
+.cards-member .card-member-description {
+    position: absolute;
+}
+
+.cards-member .card-inner {
+    padding: 0;
+    background: #24a5a550;
+}
+
+.cards-member .card svg {
+    opacity: 0.3;
+    height: 100%;
+}
+
+.cards-member .card-member-pic {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    filter: grayscale(0.1) saturate(0.9) contrast(0.9);
+    transition: .3s;
+}
+
+.cards-member .card-inner:hover .card-member-pic {
+    filter: grayscale(0) saturate(1) contrast(1);
+
+}
+
+.card-member-description {
+    margin: 10px;
+}
+
+div.card-member-name {
+    font-size: 16px;
+    text-align: center;
+}
+
+div.card-member-job {
+    font-size: 14px;
+    text-align: center;
+
+}
+
+
+.cards-member #bialas {
+    background-image: url('../../../assets/img/bialas.png');
+    background-size: 160%;
+    background-position: 50% -80%;
+}
+
+.cards-member #luiz {
+    background-image: url('../../../assets/img/luiz.png');
+    background-size: 100%;
+    background-position: 50% 320%;
+}
+
+.cards-member #higor {
+    background-image: url('../../../assets/img/higor.png');
+    background-size: 110%;
+    background-position: 50% 100%;
+}
+
+.cards-member #guilherme {
+    background-image: url('../../../assets/img/gui.png');
+    background-size: 150%;
+    background-position: 50% -250%;
+}
+
+.cards-member #gabriel {
+    background-image: url('../../../assets/img/gabriel.png');
+    background-size: 120%;
+    background-position: 50% 150%;
+}

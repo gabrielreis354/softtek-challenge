@@ -1,0 +1,11 @@
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+}
+
+.cards .card {
+    height: 250px;
+}

@@ -1,0 +1,77 @@
+.login h2 {
+  font-size: 28px;
+  font-weight: 600;
+  text-transform: capitalize;
+  line-height: 1;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.login-background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 20px;
+  border-radius: 12px;
+}
+
+.login-inputs {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  align-items: center;
+}
+
+::placeholder {
+  font-size: 14px;
+  color: #e1ffff;
+}
+
+
+.login input {
+  max-width: 450px;
+  width: 100%;
+  background-color: #e1ffff21;
+  color: #24a5a4;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: none;
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.login input:focus {
+    outline: none;
+}
+
+.login-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login #aviso {
+  position: absolute;
+  top: 107%;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: max-content;
+}
+
+.login #aviso p {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+

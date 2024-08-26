@@ -1,0 +1,17 @@
+.button {
+    border: 1px solid #24a5a4;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #24a5a4;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 9px 16px;
+    cursor: pointer;
+    transition: 0.4s;
+    font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  }
+  
+  .button:hover {
+    background-color: #24a5a4;
+    color: #e1ffff;
+  }

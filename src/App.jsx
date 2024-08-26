@@ -1,23 +1,22 @@
-import Header from './components/sections/Header'
-import Footer from './components/sections/Footer'
-import PageWrapper from './components/PageWrapper'
-import './App.scss'
+import Header from './components/Header/Header.jsx';
+import Footer from './components/Footer/Footer.jsx';
+import Router from './router/Router.jsx'
+import './assets/sass/App.scss';
 
-import {useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import React, { useMemo } from 'react';
 
+function App() {
+  const location = useLocation();
+  const isDashboardRoute = useMemo(() => location.pathname.startsWith('/dashboard'), [location.pathname]);
 
-function App() { 
-    const location = useLocation();
-    const isDashboardRoute = location.pathname.startsWith('/dashboard');
-
-    console.log(location)
-
-    return (
-        <div className={`${isDashboardRoute ? 'dashboard-app' : 'app'}`}>
-            {!isDashboardRoute && <Header />}
-            <PageWrapper/>
-            {!isDashboardRoute && <Footer />}
-        </div>
-    )
+  return (
+    <div className={isDashboardRoute ? 'dashboard-app' : 'app'}>
+      {!isDashboardRoute && <Header />}
+      <Router />
+      {!isDashboardRoute && <Footer />}
+    </div>
+  );
 }
- export default App
+
+export default React.memo(App);
