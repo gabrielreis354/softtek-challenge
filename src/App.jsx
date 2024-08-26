@@ -1,5 +1,5 @@
-import Header from './components/Header/Header.jsx';
-import Footer from './components/Footer/Footer.jsx';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import Router from './router/Router.jsx'
 import './assets/sass/App.scss';
 

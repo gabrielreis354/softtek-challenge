@@ -1,10 +1,10 @@
 import '../assets/sass/Router.scss'
 import { Route, Routes } from 'react-router-dom'
-import Home from '../containers/Home/Home.jsx'
-import About from '../containers/About/About.jsx'
-import Login from '../containers/Login/Login.jsx'
-import Dashboard from '../containers/Dashboard/Dashboard.jsx'
-import Detail from '../containers/Detail/Detail.jsx'
+import Home from '../containers/Home'
+import About from '../containers/About'
+import Login from '../containers/Login'
+import Dashboard from '../containers/Dashboard'
+import Detail from '../containers/Detail'
 
 function Router() {
 	return (
