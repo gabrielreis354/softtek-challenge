@@ -1,4 +1,5 @@
-import './Section.scss'
+/* eslint-disable react/prop-types */
+import './index.scss'
 
 
 function Section (props) {
@@ -9,9 +10,11 @@ function Section (props) {
                     <h2>
                         {props.title}
                     </h2>
-                    <p>
-                        {props.description}
-                    </p>
+                    {props.description ? (
+                        <p>
+                            {props.description}
+                        </p>
+                    ) : null}
                 </div>
                 <div className='section-content-inner'> 
                     {props.children}

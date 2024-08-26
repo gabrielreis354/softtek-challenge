@@ -1,5 +1,5 @@
-import './BadgeAI.scss'
-import IconStars from '../../assets/svg/IconStars'
+import './index.scss'
+import IconStars from '../../../assets/svg/IconStars'
 
 function BadgeAI () {
     return (

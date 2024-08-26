@@ -1,5 +1,6 @@
-import './Card.scss'
-import Grid from '../../assets/svg/Grid'
+/* eslint-disable react/prop-types */
+import './index.scss'
+import Grid from '../../../assets/svg/Grid'
 
 function Card (props) {
     return (

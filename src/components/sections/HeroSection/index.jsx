@@ -1,11 +1,11 @@
-import Grid from '../../assets/svg/Grid'
-import BadgeAI from '../elements/BadgeAI'
-import Play from '../../assets/svg/Play';
-import React, { useState } from 'react';
-import './HeroSection.scss'
+import Grid from '../../../assets/svg/Grid'
+import BadgeAI from '../../elements/BadgeAI'
+import Play from '../../../assets/svg/Play';
+import { useState } from 'react';
+import './index.scss'
 
-import thumbVP1 from '../../assets/img/vp1.webp'
-import thumbVP2 from '../../assets/img/vp2.webp'
+import thumbVP1 from '../../../assets/img/vp1.webp';
+import thumbVP2 from '../../../assets/img/vp2.webp'
 
 const videosInfo =[
     {

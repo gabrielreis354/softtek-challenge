@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "./Detail.scss";
+import './index.scss'
 
 export default function Detail() {
   const { numero } = useParams(); // Obtém o ID do chamado da URL

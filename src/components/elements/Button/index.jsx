@@ -1,6 +1,5 @@
-
-
-import './Button.scss'
+/* eslint-disable react/prop-types */
+import './index.scss'
 
 function Button (props) {
     return (
