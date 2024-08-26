@@ -4,12 +4,11 @@ $primary_color: #34efcd;
 $secondary_color: #2ebda3;
 $background_color: #222627;
 
-.dashboard-wrapper {
-  margin-top: 100px;
+.dashboard {
   display: flex;
-//   flex-direction: row;
   flex-direction: column;
-  justify-content: center;
+  width: 100%;
+  height: 100vh;
 }
 
 .sidebar {
@@ -20,19 +19,7 @@ $background_color: #222627;
   border-radius: 15px 15px 0px 0px;
 }
 
-.dashboard-wrapper h2 {
-  padding: 8px;
-  font-size: 30px;
-  font-weight: 600;
-  text-transform: capitalize;
-  line-height: 1.25;
-}
 
-::placeholder {
-  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
-  font-size: 16px;
-  color: #2ebda3;
-}
 
 .filtros_form {
   display: flex;
@@ -47,15 +34,6 @@ $background_color: #222627;
   flex-direction: column;
 }
 
-.dashboard-wrapper select, .dashboard-wrapper input {
-  background-color: $background_color;
-  color: $primary_color;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 12px;
-  border: 1px solid $primary_color;
-  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
-}
 
 input:focus {
   outline: none;
@@ -118,7 +96,216 @@ input:focus {
   color: $primary_color;
 }
 
-.dashboard-wrapper #aviso {
+.dashboard #aviso {
   margin: 20px;
   font-size: 20px;
+}
+
+.dashboard-app {
+  background: #f1ffff;
+}
+
+.dashboard-app .content {
+  max-width: 100%;
+}
+
+.dashboard-app .content-wrapper {
+  margin: 0;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 42px;
+  position: sticky;
+  min-width: 100%;
+  background: #f1ffff;
+  z-index: 1;
+}
+
+.dashboard-header .logo {
+    text-decoration: none;
+    color: #24a5a4;
+    display: flex;
+    align-items: center;
+    max-width: max-content;
+}
+
+.dashboard-header .logo span {
+  margin-left: -1px;
+  width: 50px;
+  line-height: 10px;
+  font-size: 11px;
+  position: relative;
+  font-weight: 300;
+}
+
+.dashboard-header .logo span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -4px;
+  margin: auto;
+  width: 1px;
+  height: 90%;
+  background: #24a5a499;
+}
+
+.dashboard-header .profile {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #24a5a499;
+  border-radius: 100px;
+  color: #24a5a4;
+  height: 100%;
+}
+
+
+.dashboard-header .profile-icon {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  aspect-ratio:  1 / 1;
+  border-radius: 100px;
+  background: #24a5a4;
+  overflow: hidden;
+  width: 35px;
+  height: 35px;
+  padding: 2px;
+}
+
+.dashboard-header .profile img {
+  width: 100%;
+  margin-bottom: -4px;
+}
+
+
+.dashboard-header .profile-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 8px;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+
+.dashboard-inner {
+  display: flex;
+  height: 100%;
+  overflow: auto;
+}
+
+
+.dashboard-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  background: #f1ffff;
+}
+
+.dashboard-right {
+  margin-left: 244px;
+  width: 100%;
+}
+
+.dashboard-right-content {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  padding: 30px;
+  padding-right: 40px;
+}
+
+.dashboard-right-content h2 {
+  font-size: 20px; 
+  font-weight: 500;
+  color: #001010;
+}
+
+.dashboard-right-content .filter {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 15px;
+  gap: 24px;
+  padding: 24px 32px;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+
+.dashboard-right select, .dashboard-right input {
+  border: none;
+  outline: none;
+  font-size: 12px;
+  color: #24a5a4;
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  width: 100%;
+}
+
+.dashboard-right .input-wrapper {
+  padding: 10px 14px;
+  border: 1px solid #24a5a4;
+  border-radius: 10px;
+  transition: .3s;
+  outline: 3px solid transparent;
+  flex: 1 1 0px;
+}
+
+.dashboard-right label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #24a5a4;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.dashboard-right .input-wrapper:focus-within {
+  outline: 3px solid #24a5a575;
+}
+
+.dashboard-right ::placeholder {
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-size: 12px;
+  color: #00101099;
+}
+
+.tickets-wrapper {
+  display: flex;
+  width: 100%;
+  color: #001010;
+}
+
+.tickets {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 13px;
+}
+
+.ticket {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  width: 180px;
+  border: 1px solid #24a5a4;
+}
+
+.ticket-inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.ticket:hover {
+  cursor: pointer;
 }

@@ -14,7 +14,7 @@ function Header () {
                   Home
                 </NavLink>
                 <NavLink className={({isActive}) => isActive ? "navlink on": "navlink" }  to="/about"> 
-                  Sobre
+                  Sobre o projeto
                 </NavLink>
                 <NavLink className={({isActive}) => isActive ? "navlink on": "navlink" }  to="/login"> 
                   Login

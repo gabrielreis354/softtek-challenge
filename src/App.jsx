@@ -8,14 +8,16 @@ import {useLocation } from 'react-router-dom';
 
 function App() { 
     const location = useLocation();
-    const isDashboardRoute = location.pathname === '/dashboard';
+    const isDashboardRoute = location.pathname.startsWith('/dashboard');
+
+    console.log(location)
 
     return (
-        <>
+        <div className={`${isDashboardRoute ? 'dashboard-app' : 'app'}`}>
             {!isDashboardRoute && <Header />}
             <PageWrapper/>
             {!isDashboardRoute && <Footer />}
-        </>
+        </div>
     )
 }
  export default App
