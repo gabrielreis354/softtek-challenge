@@ -1,8 +1,8 @@
 
 
 import './CTA.scss'
-import Card from "./Card"
-import Button from './Button'
+import Card from "../Card/Card.jsx"
+import Button from '../Button/Button.jsx'
 import {Link} from 'react-router-dom'
 
 function CTA () {

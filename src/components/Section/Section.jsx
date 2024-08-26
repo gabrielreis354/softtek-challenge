@@ -13,7 +13,7 @@ function Section (props) {
                         {props.description}
                     </p>
                 </div>
-                <div className='section-content-inner'> 
+                <div className='section-content-inner'>
                     {props.children}
                 </div>
             </div>

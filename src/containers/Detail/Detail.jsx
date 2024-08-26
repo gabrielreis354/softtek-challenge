@@ -1,26 +1,81 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import "./Detail.scss";
 
 export default function Detail() {
   const { numero } = useParams(); // Obtém o ID do chamado da URL
-  const [chamado, setChamado] = useState();
-  const [chamados, setChamados] = useState([]);
+  const [chamado, setChamado] = useState(null);
   const [solucoesSemelhantes, setSolucoesSemelhantes] = useState([]);
+  const [solutionTitle, setSolutionTitle] = useState("");
 
   useEffect(() => {
-    fetch("/data/chamados.json", {
-      headers: {
-        Accept: "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        setChamados(res.data);
-        return res.data.find((item) => item.Número === numero);
-      })
-      .then((res) => setChamado(res));
+    const fetchData = async () => {
+      const response = await fetch("/data/chamados.json", {
+        headers: {
+          Accept: "application/json",
+        },
+      });
+      const result = await response.json();
+      const chamadoEncontrado = result.data.find((item) => item.Número === numero);
+      setChamado(chamadoEncontrado);
+    };
+
+    fetchData();
   }, [numero]);
+
+  const encontrarSolucoesSemelhantes = useCallback(() => {
+    if (!chamado) return;
+
+    const solucoes = chamado.Interacoes
+      ? chamado.Interacoes.filter((interacao) =>
+        chamados.some(
+          (chamado) =>
+            chamado.Status === "Resolvido" &&
+            chamado.Interacoes.includes(interacao) &&
+            chamado.Categoria === chamado.Categoria &&
+            chamado.grupoAtribuicao === chamado.grupoAtribuicao
+        )
+      )
+      : [];
+
+    setSolutionTitle("Soluções Encontradas:");
+    setSolucoesSemelhantes(solucoes.map((solucao) => solucao.Resolução));
+  }, [chamado, chamados]);
+
+  const handleClose = useCallback(() => {
+    window.history.back();
+  }, []);
+
+  const handleSearchSolution = useCallback(() => {
+    setSolutionTitle("Procurando soluções semelhantes...");
+    setTimeout(encontrarSolucoesSemelhantes, 500);
+  }, [encontrarSolucoesSemelhantes]);
+
+  const handleSelectSolution = useCallback(
+    (solucao) => {
+      const currentDate = new Date();
+      const date =
+        currentDate.toLocaleDateString("pt-br", {
+          timeZone: "UTC",
+        }) +
+        " - " +
+        currentDate.toLocaleTimeString("pt-br", {
+          timeZone: "UTC",
+        });
+
+      setChamado((prevChamado) => ({
+        ...prevChamado,
+        Status: "Resolvido",
+        Atualizado: date,
+        Resolução: solucao,
+        Encerrado: date,
+        dataResolucao: currentDate.toLocaleDateString("pt-br", {
+          timeZone: "UTC",
+        }),
+      }));
+    },
+    []
+  );
 
   if (!chamado) {
     return (
@@ -29,60 +84,6 @@ export default function Detail() {
       </div>
     );
   }
-
-  function encontrarSolucoesSemelhantes(chamadoAtual) {
-    const solucoes = chamados
-      .filter(
-        (chamado) =>
-          chamado.Status === "Resolvido" &&
-          chamado.Interacoes.some((interacao) =>
-            chamadoAtual.Interacoes.includes(interacao)
-          ) &&
-          chamado.Categoria === chamadoAtual.Categoria &&
-          chamado.grupoAtribuicao === chamadoAtual.grupoAtribuicao
-      )
-      .map((chamado) => chamado.Resolução);
-
-    document.getElementById("solution_title").innerHTML =
-      "Soluções Encontradas: ";
-
-    setSolucoesSemelhantes(solucoes);
-  }
-
-  const handleClose = () => {
-    window.history.back();
-  };
-
-  const handleSearchSolution = (chamado) => {
-    document.getElementById("solution_title").innerHTML =
-      "Procurando soluções semelhantes...";
-    setTimeout(() => {
-      encontrarSolucoesSemelhantes(chamado);
-    }, 0o500);
-  };
-
-  const handleSelectSolution = (solucao) => {
-    let currentDate = new Date();
-    let date =
-      currentDate.toLocaleDateString("pt-br", {
-        timeZone: "UTC",
-      }) +
-      " - " +
-      currentDate.toLocaleTimeString("pt-br", {
-        timeZone: "UTC",
-      });
-
-      setChamado({
-        ...chamado,
-        Status: "Resolvido",
-        Atualizado: date,
-        Resolução: solucao,
-        Encerrado: date,
-        dataResolucao: currentDate.toLocaleDateString("pt-br", {
-          timeZone: "UTC",
-        }),
-      })
-  };
 
   return (
     <div className="detail_wrapper">
@@ -112,9 +113,7 @@ export default function Detail() {
             <div className="item_title">
               <h4>Encerramento</h4>
             </div>
-            <p>
-              {chamado.Encerrado ? chamado.Encerrado : "Não resolvido ainda"}
-            </p>
+            <p>{chamado.Encerrado ? chamado.Encerrado : "Não resolvido ainda"}</p>
           </div>
           <div className="item">
             <div className="item_title">
@@ -150,9 +149,7 @@ export default function Detail() {
             <div className="item_title">
               <h4>Resolução</h4>
             </div>
-            <p>
-              {chamado.Resolução ? chamado.Resolução : "Não resolvido ainda"}
-            </p>
+            <p>{chamado.Resolução ? chamado.Resolução : "Não resolvido ainda"}</p>
           </div>
         </div>
         <h2>Histórico de Interações</h2>
@@ -168,10 +165,10 @@ export default function Detail() {
         </div>
 
         <div className="buttons">
-          <button className="btn" onClick={() => handleClose()}>
+          <button className="btn" onClick={handleClose}>
             Voltar para a lista
           </button>
-          <button className="btn" onClick={() => handleSearchSolution(chamado)}>
+          <button className="btn" onClick={handleSearchSolution}>
             Procurar Soluções
           </button>
         </div>
@@ -180,11 +177,10 @@ export default function Detail() {
       <div className="solution">
         <h2>Soluções</h2>
 
-        <h3 id="solution_title"></h3>
+        <h3>{solutionTitle}</h3>
         <div className="solucoes_resumo">
-          {solucoesSemelhantes.length > 0 ?
-          solucoesSemelhantes.map((solucao, index) => {
-            return (
+          {solucoesSemelhantes.length > 0 ? (
+            solucoesSemelhantes.map((solucao, index) => (
               <div className="item" key={index}>
                 <div className="item_title">
                   <h3>Solução #{index + 1}</h3>
@@ -197,8 +193,8 @@ export default function Detail() {
                   Aplicar Solução
                 </button>
               </div>
-            );
-          }) : (
+            ))
+          ) : (
             <p>Nenhuma solução encontrada.</p>
           )}
         </div>

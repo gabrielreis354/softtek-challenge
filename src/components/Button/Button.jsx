@@ -1,5 +1,3 @@
-
-
 import './Button.scss'
 
 function Button (props) {

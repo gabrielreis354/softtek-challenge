@@ -1,6 +1,6 @@
 import './Header.scss'
 import { Link, NavLink }  from 'react-router-dom'
-import Logo from '../../assets/svg/Logo'
+import Logo from '../../assets/svg/Logo.jsx'
 
 function Header () {
     return (
@@ -13,10 +13,10 @@ function Header () {
                 <NavLink className={ ({isActive}) => isActive ? "navlink on": "navlink" } to="/">
                   Home
                 </NavLink>
-                <NavLink className={({isActive}) => isActive ? "navlink on": "navlink" }  to="/about"> 
+                <NavLink className={({isActive}) => isActive ? "navlink on": "navlink" }  to="/about">
                   Sobre o projeto
                 </NavLink>
-                <NavLink className={({isActive}) => isActive ? "navlink on": "navlink" }  to="/login"> 
+                <NavLink className={({isActive}) => isActive ? "navlink on": "navlink" }  to="/login">
                   Login
                 </NavLink>
             </nav>

@@ -1,6 +1,6 @@
 import './Footer.scss'
 import { Link, NavLink }  from 'react-router-dom'
-import Logo from '../../assets/svg/Logo'
+import Logo from '../../assets/svg/Logo.jsx'
 
 function Header () {
     return (
@@ -16,13 +16,13 @@ function Header () {
                     Projeto acadêmico para a <Link to={"https://fiap.com.br/"}>Fiap</Link>.
                 </div>
                 <nav>
-                    <NavLink to="/">
+                    <NavLink to="/public">
                     Home
                     </NavLink>
-                    <NavLink   to="/about"> 
+                    <NavLink   to="/about">
                     Sobre
                     </NavLink>
-                    <NavLink  to="/login"> 
+                    <NavLink  to="/login">
                     Login
                     </NavLink>
                 </nav>

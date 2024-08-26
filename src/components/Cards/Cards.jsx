@@ -1,11 +1,11 @@
 import './Cards.scss'
-import Card from './Card'
-import IconSelect from '../../assets/svg/IconSelect'
-import IconComputer from '../../assets/svg/IconComputer'
-import IconFocus from '../../assets/svg/IconFocus'
+import Card from '../Card/Card.jsx'
+import IconSelect from '../../assets/svg/IconSelect.jsx'
+import IconComputer from '../../assets/svg/IconComputer.jsx'
+import IconFocus from '../../assets/svg/IconFocus.jsx'
 
 function Cards () {
-    return ( 
+    return (
         <div className='cards'>
             <Card>
                 <span>
@@ -18,7 +18,7 @@ function Cards () {
                     A EasyCall usa IA para analisar históricos e identificar padrões, acelerando a resolução de problemas e aprimorando a precisão das soluções.
                 </p>
             </Card>
-            
+
             <Card>
                 <span>
                     <IconSelect color={"#e1ffff"} height={"40"}/>
