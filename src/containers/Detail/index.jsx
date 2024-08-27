@@ -31,14 +31,14 @@ export default function Detail() {
     if (!chamado) return;
 
     const solucoes = chamado.Interacoes
-      ? chamado.Interacoes.filter((interacao) =>
-          chamados.some(
-            (chamado) =>
-              chamado.Status === "Resolvido" &&
-              chamado.Interacoes.includes(interacao) &&
-              chamado.Categoria === chamado.Categoria &&
-              chamado.grupoAtribuicao === chamado.grupoAtribuicao
-          )
+      ? chamados.filter(
+          (ticket) =>
+            ticket.Status === "Resolvido" &&
+            ticket.Interacoes.some((interacao) =>
+              chamado.Interacoes.includes(interacao)
+            ) &&
+            ticket.Categoria === chamado.Categoria &&
+            ticket.grupoAtribuicao === chamado.grupoAtribuicao
         )
       : [];
 
