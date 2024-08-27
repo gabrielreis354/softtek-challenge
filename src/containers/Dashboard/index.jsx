@@ -5,6 +5,7 @@ import Logo from "../../assets/svg/Logo";
 import profilePic from "../../assets/img/profile.png";
 import Clock from "../../assets/svg/Clock";
 import Pin from "../../assets/svg/Pin";
+import Arrow from "../../assets/svg/Arrow";
 
 export default function Dashboard() {
   const [database, setDatabase] = useState([]);
@@ -50,12 +51,7 @@ export default function Dashboard() {
     <div className="dashboard">
       <div className="dashboard-header">
         <Link className="logo" to={"/dashboard"}>
-          <Logo
-            width={120}
-            icon_color={"#f1ffff"}
-            icon_bg_color={"#24a5a4"}
-            name_color={"#24a5a4"}
-          />
+          <Logo width={120} icon_color={"#f1ffff"} icon_bg_color={"#24a5a4"} name_color={"#24a5a4"} />
           <span>Service Management</span>
         </Link>
 
@@ -155,19 +151,20 @@ export default function Dashboard() {
                 {filteredChamados.length > 0
                   ? filteredChamados.map(function (chamado) {
                       return (
-                        <div key={chamado.Número} className="ticket">
+                        <div
+                          key={chamado.Número} 
+                          className="ticket"
+            
+                          >
                           <div className="ticket-inner">
                             <div className="ticket-top">
                               <div className="ticket-id">
-                                <div
-                                  className="text"
-                                  onClick={() => handleVerMais(chamado.Número)}
-                                >
+                                <div className="text">
                                   {chamado.Número}
                                 </div>
                               </div>
                               <div className="ticket-time">
-                                <Clock height={13} color={"#001010"}/>
+                                <Clock height={11} color={"#001010"}/>
                                 <div className="text">
                                   {chamado.Aberto.split(" ")[0]}
                                 </div>
@@ -178,7 +175,7 @@ export default function Dashboard() {
                                 <div className="text">{chamado.Descrição}</div>
                               </div>
                               <div className="ticket-local">
-                                <Pin height={13} color="#001010"/>
+                                <Pin height={11} color="#001010"/>
                                 <div className="text">
                                   {chamado.Local}
                                 </div>
@@ -198,6 +195,11 @@ export default function Dashboard() {
 
                             </div>
                           </div>
+                          <div className="ticket-button" >
+                            <div className="ticket-button-inner" onClick={() => handleVerMais(chamado.Número)}>
+                              <Arrow height={"13"} color={"#f6f6f6"} />
+                            </div>
+                          </div>
                         </div>
                       );
                     })
@@ -207,6 +209,7 @@ export default function Dashboard() {
                   </div> 
                   }
               </div>
+
             </div>
 
           </div>

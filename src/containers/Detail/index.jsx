@@ -28,7 +28,7 @@ export default function Detail() {
 
     const solucoes = chamado.Interacoes
       ? chamado.Interacoes.filter((interacao) =>
-        chamados.some(
+        chamado.some(
           (chamado) =>
             chamado.Status === "Resolvido" &&
             chamado.Interacoes.includes(interacao) &&
@@ -40,7 +40,7 @@ export default function Detail() {
 
     setSolutionTitle("Soluções Encontradas:");
     setSolucoesSemelhantes(solucoes.map((solucao) => solucao.Resolução));
-  }, [chamado, chamados]);
+  }, [chamado, chamado]);
 
   const handleClose = useCallback(() => {
     window.history.back();

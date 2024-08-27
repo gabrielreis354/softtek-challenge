@@ -100,7 +100,7 @@ input:focus {
 }
 
 .dashboard-app {
-  background: #fbfbfb;
+  background: #f6f6f6;
 }
 
 .dashboard-app .content {
@@ -117,7 +117,7 @@ input:focus {
   padding: 22px 44px;
   position: sticky;
   min-width: 100%;
-  background: #fbfbfb;
+  background: #f6f6f6;
   z-index: 1;
 }
 
@@ -201,7 +201,7 @@ input:focus {
   top: 0;
   left: 0;
   width: 260px;
-  background: #fbfbfb;
+  background: #f6f6f6;
   height: 100%;
 }
 
@@ -224,6 +224,8 @@ input:focus {
   padding-right: 44px;
   padding-top: 36px;
   padding-left: 44px;
+  padding-bottom: 12px;
+
 }
 
 .dashboard h2 {
@@ -300,18 +302,22 @@ input:focus {
   justify-content: space-between;
   flex-wrap: wrap;
   row-gap: 20px;
+  width: 100%;
 }
 
 .ticket {
+  margin: 0 auto 0 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
-  width: 270px;
-  background: #fbfbfb;
-  box-shadow: 0 6px 30px rgba(182, 186, 203, 0.3);
-  border: 1px solid #00101020;
+  border-radius: 5px;
+  width: 265px;
+  background: #fafafa;
+  box-shadow: 0 6px 24px rgba(182, 186, 203, 0.3);
+  border: 1px solid #0010100c;
+  position: relative;
+  overflow: hidden;
 }
 
 .ticket-inner {
@@ -322,10 +328,7 @@ input:focus {
   gap: 15px;
   line-height: 1;
   color: #001010;
-}
-
-.ticket:hover {
-  cursor: pointer;
+  z-index: 1;
 }
 
 .ticket-top {
@@ -335,11 +338,10 @@ input:focus {
 
 .ticket-main {
   display: flex;
-  height: 44px;
+  height: 48px;
   flex-direction: column;
   justify-content: center;
   font-size: 14px;
-  font-weight: 500;
   gap: 5px;
 }
 
@@ -352,7 +354,7 @@ input:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   border: 1px solid #00101020;
   padding: 4px 6px;
   border-radius: 3px;
@@ -383,35 +385,33 @@ input:focus {
 
 
 .ticket-main .ticket-description .text {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 
 .ticket-description {
   font-size: 14px;
   font-weight: 400;
+  line-height: 1.25;
 }
 
 .ticket-local {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
   font-weight: 400;
   font-size: 11px;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .ticket-time {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
   font-weight: 400;
-  font-size: 11px;
+  font-size: 10px;
   opacity: 0.6;
 }
 
@@ -436,6 +436,36 @@ input:focus {
   display: flex;
   width: 100%;
   height: 100%;
-  justify-content: center;
   align-items: center;
+}
+
+
+.ticket-button {
+  opacity: 0;
+  z-index: 1;
+  transition: .3s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: start;
+  border: 1px solid #24a5a475;
+  border-radius: 5px;
+}
+
+.ticket-button-inner {
+  padding: 4px;
+  display: flex;
+  background: #24a5a4;
+  border-radius: 2px;
+  margin: 18px;
+  cursor: pointer;
+}
+
+
+.ticket:hover .ticket-button {
+  opacity: 1;
 }

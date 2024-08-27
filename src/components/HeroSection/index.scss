@@ -43,6 +43,7 @@ h1.second-line {
     opacity: 0.5;
     font-size: 16px;
     margin: 0 100px;
+    font-weight: 200;
 }
 
 .glow-grid {
@@ -67,7 +68,7 @@ h1.second-line {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(35% 30% at 50% 70%, #24a5a599 0%, #001010 99%);
+    background: radial-gradient(35% 30% at 50% 65%, #24a5a5bd 0%, #001010 99%);
     opacity: 0.85;
 }
 
