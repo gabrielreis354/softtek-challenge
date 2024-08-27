@@ -1,10 +1,11 @@
-import { useEffect, useState, useCallback, useMemo } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
-import './index.scss'
+import "./index.scss";
 
 export default function Detail() {
   const { numero } = useParams(); // Obtém o ID do chamado da URL
   const [chamado, setChamado] = useState(null);
+  const [chamados, setChamados] = useState([]);
   const [solucoesSemelhantes, setSolucoesSemelhantes] = useState([]);
   const [solutionTitle, setSolutionTitle] = useState("");
 
@@ -16,7 +17,10 @@ export default function Detail() {
         },
       });
       const result = await response.json();
-      const chamadoEncontrado = result.data.find((item) => item.Número === numero);
+      setChamados(result.data);
+      const chamadoEncontrado = result.data.find(
+        (item) => item.Número === numero
+      );
       setChamado(chamadoEncontrado);
     };
 
@@ -28,15 +32,17 @@ export default function Detail() {
 
     const solucoes = chamado.Interacoes
       ? chamado.Interacoes.filter((interacao) =>
-        chamados.some(
-          (chamado) =>
-            chamado.Status === "Resolvido" &&
-            chamado.Interacoes.includes(interacao) &&
-            chamado.Categoria === chamado.Categoria &&
-            chamado.grupoAtribuicao === chamado.grupoAtribuicao
+          chamados.some(
+            (chamado) =>
+              chamado.Status === "Resolvido" &&
+              chamado.Interacoes.includes(interacao) &&
+              chamado.Categoria === chamado.Categoria &&
+              chamado.grupoAtribuicao === chamado.grupoAtribuicao
+          )
         )
-      )
       : [];
+
+    console.log(solucoes);
 
     setSolutionTitle("Soluções Encontradas:");
     setSolucoesSemelhantes(solucoes.map((solucao) => solucao.Resolução));
@@ -51,31 +57,28 @@ export default function Detail() {
     setTimeout(encontrarSolucoesSemelhantes, 500);
   }, [encontrarSolucoesSemelhantes]);
 
-  const handleSelectSolution = useCallback(
-    (solucao) => {
-      const currentDate = new Date();
-      const date =
-        currentDate.toLocaleDateString("pt-br", {
-          timeZone: "UTC",
-        }) +
-        " - " +
-        currentDate.toLocaleTimeString("pt-br", {
-          timeZone: "UTC",
-        });
+  const handleSelectSolution = useCallback((solucao) => {
+    const currentDate = new Date();
+    const date =
+      currentDate.toLocaleDateString("pt-br", {
+        timeZone: "UTC",
+      }) +
+      " - " +
+      currentDate.toLocaleTimeString("pt-br", {
+        timeZone: "UTC",
+      });
 
-      setChamado((prevChamado) => ({
-        ...prevChamado,
-        Status: "Resolvido",
-        Atualizado: date,
-        Resolução: solucao,
-        Encerrado: date,
-        dataResolucao: currentDate.toLocaleDateString("pt-br", {
-          timeZone: "UTC",
-        }),
-      }));
-    },
-    []
-  );
+    setChamado((prevChamado) => ({
+      ...prevChamado,
+      Status: "Resolvido",
+      Atualizado: date,
+      Resolução: solucao,
+      Encerrado: date,
+      dataResolucao: currentDate.toLocaleDateString("pt-br", {
+        timeZone: "UTC",
+      }),
+    }));
+  }, []);
 
   if (!chamado) {
     return (
@@ -113,7 +116,9 @@ export default function Detail() {
             <div className="item_title">
               <h4>Encerramento</h4>
             </div>
-            <p>{chamado.Encerrado ? chamado.Encerrado : "Não resolvido ainda"}</p>
+            <p>
+              {chamado.Encerrado ? chamado.Encerrado : "Não resolvido ainda"}
+            </p>
           </div>
           <div className="item">
             <div className="item_title">
@@ -149,7 +154,9 @@ export default function Detail() {
             <div className="item_title">
               <h4>Resolução</h4>
             </div>
-            <p>{chamado.Resolução ? chamado.Resolução : "Não resolvido ainda"}</p>
+            <p>
+              {chamado.Resolução ? chamado.Resolução : "Não resolvido ainda"}
+            </p>
           </div>
         </div>
         <h2>Histórico de Interações</h2>
