@@ -37,7 +37,7 @@ function CardsMember() {
       <Card>
         <div className="card-member-pic" id="gabriel"></div>
         <div className="card-member-description">
-          <div className="card-member-name">Gabriel Reis Cunha</div>
+          <div className="card-member-name">Gabriel Reis</div>
           <div className="card-member-job">Desenvolvedor</div>
         </div>
       </Card>

@@ -17,6 +17,15 @@
 
 .cards-member .card-member-description {
     position: absolute;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    background: linear-gradient(0deg, #00101099 0%, transparent 33%);
+    line-height: 1;
 }
 
 .cards-member .card-inner {
@@ -38,21 +47,15 @@
     transition: .3s;
 }
 
-.cards-member .card-inner:hover .card-member-pic {
-    filter: grayscale(0) saturate(1) contrast(1);
-
-}
-
-.card-member-description {
-    margin: 10px;
-}
 
 div.card-member-name {
+    font-weight: 600;
     font-size: 16px;
     text-align: center;
 }
 
 div.card-member-job {
+    font-weight: 200;
     font-size: 14px;
     text-align: center;
 
