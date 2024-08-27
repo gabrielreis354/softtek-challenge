@@ -151,15 +151,14 @@ export default function Dashboard() {
                 {filteredChamados.length > 0
                   ? filteredChamados.map(function (chamado) {
                       return (
-                        <div
-                          key={chamado.Número} 
-                          className="ticket"
-            
-                          >
+                        <div key={chamado.Número} className="ticket">
                           <div className="ticket-inner">
                             <div className="ticket-top">
                               <div className="ticket-id">
-                                <div className="text">
+                                <div
+                                  className="text"
+                                  onClick={() => handleVerMais(chamado.Número)}
+                                >
                                   {chamado.Número}
                                 </div>
                               </div>
