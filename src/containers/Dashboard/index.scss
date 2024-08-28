@@ -224,7 +224,7 @@ $background_color: #222627;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 6px;
   width: 265px;
   background: #fafafa;
   box-shadow: 0 6px 24px rgba(182, 186, 203, 0.3);
@@ -366,7 +366,8 @@ $background_color: #222627;
   justify-content: end;
   align-items: start;
   border: 1px solid #24a5a499;
-  border-radius: 5px;
+  border-radius: 6px;
+  backdrop-filter: blur(1px);
 }
 
 .ticket-button-inner {

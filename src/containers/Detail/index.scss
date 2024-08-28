@@ -1,108 +1,26 @@
-$primary_color: #34efcd;
-$secondary_color: #2ebda3;
-$background_color: #2c2d2c;
-
-.detail_wrapper {
-  margin-top: 100px;
+.turn-back {
   display: flex;
-  flex-direction: row;
-}
-
-.detail_panel {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  background-color: #404141;
-  border-radius: 15px 0 0 15px;
-  padding: 0 20px 20px 20px;
-  gap: 20px;
-}
-
-.tabs {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 20px;
-}
-
-.tab {
-  color: #2c2d2c;
-  background-color: #34efcd;
-  padding: 8px 15px;
-  border-radius: 0 0 8px 8px;
-  cursor: pointer;
-}
-
-.items {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
   justify-content: center;
-  gap: 20px;
-}
-
-.item {
-  max-width: 170px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #34efcd;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.item .item_title {
-  padding: 2px 8px;
-  border-bottom: 1px solid #34efcd;
-  color: #34efcd;
-}
-
-.item p {
-  padding: 8px;
-  color: #fff;
-}
-
-.buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 20px;
-  margin-top: 40px;
-}
-
-
-
-.solucoes_resumo {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
   align-items: center;
-}
-
-.btn_solution {    
-  border: 1px solid $primary_color;
-  border-radius: 8px;
-  background-color: $primary_color;
-  color: $background_color;
-  font-size: 18px;
-  font-weight: 700;
-  margin: 2px;
-  padding: 4px 7px;
+  width: min-content;
+  padding: 5px 10px;
+  border-radius: 2px;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin: 10px 2px;
+  display: flex;
+  gap: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #24a4a5;
+  border: 1px solid #24a4a5;
   cursor: pointer;
-  transition: 0.4s;
-  text-decoration: none;
+  font-weight: 300;
 }
 
-.btn_solution:hover {
-  background-color: $background_color;
-  color: $primary_color;
-}
-
-
-/**/
-
-.none {
-  display: none;
+.turn-back svg {
+  rotate: -135deg;
 }
 
 .dashboard-app .details-wrapper {
@@ -115,6 +33,7 @@ $background_color: #2c2d2c;
 }
 
 .dashboard-app .details {
+  position: relative;
   display: flex;
   flex-direction: column;
   border: 1px solid transparent;

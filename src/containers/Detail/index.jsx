@@ -1,13 +1,14 @@
-import { useEffect, useState, useCallback } from "react";
-import { useParams } from "react-router-dom";
-import "./index.scss";
+import { useEffect, useState, useCallback } from "react"
+import { useParams, Link } from "react-router-dom"
+import "./index.scss"
+import Arrow from "../../assets/svg/Arrow"
 
 export default function Detail() {
-  const { numero } = useParams(); // Obtém o ID do chamado da URL
-  const [chamado, setChamado] = useState(null);
-  const [chamados, setChamados] = useState([]);
-  const [solucoesSemelhantes, setSolucoesSemelhantes] = useState([]);
-  const [solutionTitle, setSolutionTitle] = useState("Nenhuma solução encontrada.");
+  const { numero } = useParams() // Obtém o ID do chamado da URL
+  const [chamado, setChamado] = useState(null)
+  const [chamados, setChamados] = useState([])
+  const [solucoesSemelhantes, setSolucoesSemelhantes] = useState([])
+  const [solutionTitle, setSolutionTitle] = useState("Nenhuma solução encontrada.")
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,12 +17,12 @@ export default function Detail() {
           Accept: "application/json",
         },
       });
-      const result = await response.json();
+      const result = await response.json()
       setChamados(result.data);
       const chamadoEncontrado = result.data.find(
         (item) => item.Número === numero
       );
-      setChamado(chamadoEncontrado);
+      setChamado(chamadoEncontrado)
     };
 
     fetchData();
@@ -42,20 +43,20 @@ export default function Detail() {
         )
       : [];
 
-    console.log(solucoes);
+    console.log(solucoes)
 
     setSolutionTitle("Soluções Encontradas:");
-    setSolucoesSemelhantes(solucoes.map((solucao) => solucao.Resolução));
-  }, [chamado, chamado]);
+    setSolucoesSemelhantes(solucoes.map((solucao) => solucao.Resolução))
+  }, [chamado, chamado])
 
   const handleClose = useCallback(() => {
-    window.history.back();
+    window.history.back()
   }, []);
 
   const handleSearchSolution = useCallback(() => {
-    setSolutionTitle("Procurando soluções semelhantes...");
-    setTimeout(encontrarSolucoesSemelhantes, 500);
-  }, [encontrarSolucoesSemelhantes]);
+    setSolutionTitle("Procurando soluções semelhantes...")
+    setTimeout(encontrarSolucoesSemelhantes, 500)
+  }, [encontrarSolucoesSemelhantes])
 
   const handleSelectSolution = useCallback((solucao) => {
     const currentDate = new Date();
@@ -78,7 +79,7 @@ export default function Detail() {
         timeZone: "UTC",
       }),
     }));
-  }, []);
+  }, [])
 
   if (!chamado) {
     return (
@@ -91,6 +92,15 @@ export default function Detail() {
   return (
     <div className="details-wrapper">
       <div className="details">
+        <Link to="/dashboard">
+          <div className="turn-back">
+            <Arrow height={"13"} color={"#24a4a5"} />
+            <div>
+              Voltar
+            </div>
+          </div>
+        </Link>
+
         <div className="details-head">
           <div className="details-title">
             Detalhes do chamado #{chamado.Número}
