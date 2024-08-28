@@ -24,8 +24,9 @@
     flex-direction: column;
     justify-content: end;
     align-items: center;
-    background: linear-gradient(0deg, #00101099 0%, transparent 33%);
+    background: linear-gradient(0deg, #001010bc 0%, transparent 33%);
     line-height: 1;
+    gap: 2px;
 }
 
 .cards-member .card-inner {
@@ -90,4 +91,9 @@ div.card-member-job {
     background-image: url('../../assets/img/gabriel.png');
     background-size: 120%;
     background-position: 50% 150%;
+}
+
+
+.cards-member .card:nth-child(2), .cards-member .card:nth-child(4) {
+    transform: translateY(22px);
 }

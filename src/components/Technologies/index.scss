@@ -1,0 +1,52 @@
+.technologies-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.technologies {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.technology {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 244px;
+    padding: 16px 20px;
+    border: 1px solid #e1ffff18;
+    border-radius: 10px;
+    flex: 1 1 0;
+}
+
+.tech-head {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.tech-icon {
+    
+}
+
+.tech-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #e1ffff;
+}
+
+.tech-text {
+    font-size: 12px;
+    font-weight: 200;
+    color: #e1ffff;
+}
+
+
+.technology:nth-child(2), .technology:nth-child(4) {
+    transform: translateY(22px);
+}
