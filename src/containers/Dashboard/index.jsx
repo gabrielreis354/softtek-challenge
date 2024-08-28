@@ -151,7 +151,10 @@ export default function Dashboard() {
                 {filteredChamados.length > 0
                   ? filteredChamados.map(function (chamado) {
                       return (
-                        <div key={chamado.Número} className="ticket">
+                        <div 
+                          key={chamado.Número} 
+                          className="ticket"
+                        >
                           <div className="ticket-inner">
                             <div className="ticket-top">
                               <div className="ticket-id">
@@ -188,7 +191,6 @@ export default function Dashboard() {
                                 </div>
                               </div>
                               <div className="ticket-status">
-                                
                                 <div className="text">{chamado.Status}</div>
                               </div>
 

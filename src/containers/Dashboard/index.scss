@@ -11,93 +11,6 @@ $background_color: #222627;
   height: 100vh;
 }
 
-.sidebar {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: $background_color;
-  border-radius: 15px 15px 0px 0px;
-}
-
-.filtros_form {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.input_wrapper {
-  max-width: 80%;
-  display: flex;
-  flex-direction: column;
-}
-
-
-input:focus {
-  outline: none;
-}
-
-.main_panel {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: aquamarine;
-  border-radius: 0px 0px 15px 15px;
-  color: $background_color;
-  margin-bottom: 80px;
-}
-
-.cards_wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.card_wrapper {
-  max-width: 170px;
-  width: 100%;
-  height: 200px;
-  background-color: #222627;
-  color: $primary_color;
-  margin: 10px;
-  padding: 10px;
-  transition: 0.4s;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.card_wrapper:hover {
-  background-color: $primary_color;
-  color: #222627;
-  cursor: pointer;
-}
-
-.btn {    
-  border: 1px solid $primary_color;
-  border-radius: 8px;
-  background-color: $primary_color;
-  color: $background_color;
-  font-size: 18px;
-  font-weight: 700;
-  padding: 8px 15px;
-  cursor: pointer;
-  transition: 0.4s;
-  text-decoration: none;
-}
-
-.btn:hover {
-  background-color: $background_color;
-  color: $primary_color;
-}
-
-.dashboard #aviso {
-  margin: 20px;
-  font-size: 20px;
-}
 
 .dashboard-app {
   background: #f6f6f6;
@@ -464,7 +377,6 @@ input:focus {
   margin: 18px;
   cursor: pointer;
 }
-
 
 .ticket:hover .ticket-button {
   opacity: 1;

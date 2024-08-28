@@ -70,16 +70,7 @@ $background_color: #2c2d2c;
   margin-top: 40px;
 }
 
-.solution {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 20px;
-  background-color: #2c2d2c;
-  border-radius: 0px 15px 15px 0px;
-  padding: 20px;
-}
+
 
 .solucoes_resumo {
   display: flex;
@@ -105,4 +96,146 @@ $background_color: #2c2d2c;
 .btn_solution:hover {
   background-color: $background_color;
   color: $primary_color;
+}
+
+
+/**/
+
+.none {
+  display: none;
+}
+
+.dashboard-app .details-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.dashboard-app .details {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid transparent;
+  color: #001010;
+  width: 75%;
+  max-width: 720px;
+  padding: 32px;
+  border-radius: 15px;
+  background: #fafafa;
+  box-shadow: 0 6px 24px rgba(182, 186, 203, 0.3);
+  gap: 24px;
+}
+
+.dashboard-app .details-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-app .details-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.dashboard-app .details-ticket {
+  display: flex;
+  gap: 10px;
+}
+
+.dashboard-app .details-informations {
+  display: flex;
+  gap: 24px;
+}
+
+.dashboard-app .details-information{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #00101010;
+  padding: 22px 18px;
+  border-radius: 10px;
+  gap: 8px;
+  flex: 1 1 0;
+  align-items: start;
+}
+
+.details-info {
+  display: flex;
+  gap: 4px;
+}
+
+.description-label {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.description-text {
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.details h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.details-activity {
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.details-info-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.details-tickets {
+  display: flex;
+  gap: 15px;
+}
+
+.details-solutions {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.not-solutions {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.not-solutions-text {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.not-solutions-button button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #24a4a5;
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+  color: #24a4a5;
+}
+
+.solution {
+  display: flex;
+  width: 100%;  
+  justify-content: space-between;
+}
+
+.solution-text {
+  display: flex;
+  gap: 10px;
+}
+
+.solution-number {
+  width: 10px;
 }
