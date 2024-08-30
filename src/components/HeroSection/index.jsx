@@ -14,9 +14,9 @@ const videosInfo =[
         thumbSrc: thumbVP1
     },
     {
-        youtubeId: "",
+        youtubeId: "7HAc3y8lcB0",
         videoTitle: "Video Pitch 02",
-        videoDescription: "O segundo video pitch foi entregue no dia 29/08/2024 na plataforma On da FIAP. Este segundo video pitch focou principalmente em apresentar o contexto que permeia a aplicação e sua demonstração. O video tem duração de 03:00.",
+        videoDescription: "O segundo video pitch foi entregue no dia 29/08/2024 na plataforma On da FIAP. Este segundo video pitch focou principalmente em apresentar o contexto que permeia a aplicação e sua demonstração. O video tem duração de 02:42.",
         thumbSrc: thumbVP2
     },
 ]
